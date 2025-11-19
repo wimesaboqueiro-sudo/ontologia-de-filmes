@@ -1,20 +1,19 @@
 # 🎬 Ontologia de Filmes – Linked Data & DBpedia
 
-Esta ontologia foi projetada para representar o domínio cinematográfico de forma estruturada e semântica, utilizando o padrão **OWL**. Seu objetivo é criar um modelo que abranja as principais entidades e relacionamentos do mundo dos filmes, possibilitando a integração com dados abertos via **DBpedia**.
+Esta ontologia foi projetada para representar o domínio cinematográfico de forma estruturada e semântica, utilizando o padrão **OWL**. teve como principal objetivo criar um modelo que abranja as principais entidades e relacionamentos do mundo dos filmes, possibilitando a integração com dados abertos via **DBpedia**.
 
 A ontologia é útil para:
 - Sistemas de recomendação de filmes
 - Análise semântica de filmes e sua produção
-- Integração com dados abertos da Web Semântica
 - Criação de bases de conhecimento sobre filmes e produções cinematográficas
 
 ---
 
 ##  Objetivo
 
-O objetivo principal dessa ontologia é representar de forma explícita o conhecimento sobre filmes, suas produções, atores, diretores, estúdios, gêneros e prêmios, além de estabelecer uma **integração com o DBpedia**. Essa ontologia é uma ferramenta poderosa para trabalhar com dados abertos na Web Semântica e pode ser usada em diversos contextos, como:
+O objetivo principal dessa ontologia é representar o conhecimento sobre filmes, suas produções, atores, diretores, estúdios, gêneros e prêmios, além de estabelecer uma **integração com o DBpedia**. Essa ontologia é uma ferramenta que permite trabalhar com dados abertos na Web Semântica e pode ser usada em diversos contextos, como:
 
-- **Consultas SPARQL** para explorar dados relacionados a filmes.
+- **Consultas** para explorar dados relacionados a filmes.
 - **Análise e visualização de grafos** com ferramentas de Web Semântica.
 - **Integração com outras ontologias** e fontes de dados externas.
 
