@@ -35,7 +35,7 @@ Além disso, a ontologia permite o relacionamento entre essas entidades, como "u
 
 ##  Estrutura de Classes
 
-### **Classes Principais**
+### ** Classes Principais **
 1. **Filme**: A classe principal para obras cinematográficas.
 2. **Pessoa**: Para representar indivíduos envolvidos na produção, como atores, diretores, produtores e roteiristas.
 3. **Estúdio**: Para representar estúdios de produção e distribuidoras de filmes.
