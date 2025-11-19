@@ -75,26 +75,19 @@ Cada classe principal possui subclasses para detalhar mais aspectos específicos
 
 A ontologia utiliza o DBpedia como fonte de dados externos para enriquecer e contextualizar as informações presentes nas classes e subclasses. As classes e indivíduos são relacionados ao DBpedia usando as propriedades `owl:equivalentClass` e `rdfs:seeAlso`.
 
-### **Exemplos de Links para DBpedia**
-- **Filme** → `http://dbpedia.org/resource/Film`
-- **Ator** → `http://dbpedia.org/resource/Actor`
-- **Diretor** → `http://dbpedia.org/resource/Film_director`
-- **Gênero** → `http://dbpedia.org/resource/Film_genre`
-- **Oscar** → `http://dbpedia.org/resource/Academy_Awards`
+## 🔗 Integração com DBpedia
+
+A ontologia contém links para entidades reais, por exemplo:
+
+| Classe | Link |
+|--------|-----------------------------------|
+| Filme | http://dbpedia.org/resource/Film |
+| Ator | http://dbpedia.org/resource/Actor |
+| Distribuidora | http://dbpedia.org/resource/Film_distributor |
+| Ficção Científica | http://dbpedia.org/resource/Science_fiction_film |
+| Oscar | http://dbpedia.org/resource/Academy_Awards |
 
 Esses links permitem que a ontologia se conecte diretamente com a base de dados do DBpedia e utilize as informações presentes nesse repositório de dados abertos.
-
----
-
-##  Classes com Equivalências
-
-Algumas classes da ontologia possuem equivalências com entidades externas, principalmente com o DBpedia. Exemplos de equivalências são:
-
-- **Filme** → `http://dbpedia.org/resource/Film`
-- **Ator** → `http://dbpedia.org/resource/Actor`
-- **Diretor** → `http://dbpedia.org/resource/Film_director`
-
-Isso permite a interconexão de dados entre a ontologia e o DBpedia, facilitando consultas e ampliando o escopo de informações que podem ser acessadas.
 
 ---
 
