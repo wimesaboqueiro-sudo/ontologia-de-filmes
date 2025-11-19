@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/ontologia_filmes#"
+     xml:base="http://example.org/ontologia_filmes"
+     xmlns:ex="http://example.org/ontologia_filmes#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dbr="http://dbpedia.org/resource/">
+
+  <owl:Ontology rdf:about="http://example.org/ontologia_filmes">
+    <rdfs:label xml:lang="pt">Ontologia de Filmes — Guia Passo a Passo</rdfs:label>
+    <rdfs:comment xml:lang="pt">Ontologia de domínio cinematográfico com mapeamentos para recursos DBpedia (links disponíveis como anotações e rdfs:seeAlso). Gerado para uso em Protégé (.owl).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/"/>
+  </owl:Ontology>
+
+  <!-- Annotation property para disponibilizar o link em 'Changes by Entity' (anotação personalizada) -->
+  <owl:AnnotationProperty rdf:about="http://example.org/ontologia_filmes#changesByEntity">
+    <rdfs:label xml:lang="en">changesByEntity</rdfs:label>
+    <rdfs:comment xml:lang="en">Annotation property intended to store the external DBpedia link so it is visible in entity changes/annotations.</rdfs:comment>
+  </owl:AnnotationProperty>
+
+  <!-- ========================================================================= -->
+  <!-- CLASSE  Filmes e Subclasses -->
+  <!-- ========================================================================= -->
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Filme">
+    <rdfs:label xml:lang="pt">Filme</rdfs:label>
+    <rdfs:comment xml:lang="pt">Classe principal para obras cinematográficas (filmes).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Documentario">
+    <rdfs:label xml:lang="pt">Documentário</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Documentary_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Documentary_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Documentary_film"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#SerieDeTV">
+    <rdfs:label xml:lang="pt">SérieDeTV</rdfs:label>
+    <rdfs:comment xml:lang="pt">Séries televisivas (classificadas separadamente de filmes).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Television_series"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Television_series</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Television_series"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#FilmeLongaMetragem">
+    <rdfs:label xml:lang="pt">FilmeLongaMetragem</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:comment xml:lang="pt">Filmes de longa-metragem — nenhum recurso DBpedia específico foi associado conforme a referência fornecida.</rdfs:comment>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No DBpedia resource available (link intentionally omitted).</ex:changesByEntity>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#FilmeCurtaMetragem">
+    <rdfs:label xml:lang="pt">FilmeCurtaMetragem</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Short_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Short_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Short_film"/>
+  </owl:Class>
+
+  <!-- ========================================================================= -->
+  <!-- CLASSE  Pessoas e Subclasses -->
+  <!-- ========================================================================= -->
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Pessoa">
+    <rdfs:label xml:lang="pt">Pessoa</rdfs:label>
+    <rdfs:comment xml:lang="pt">Pessoa envolvida na produção ou atuação.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Person"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Person</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Person"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Ator">
+    <rdfs:label xml:lang="pt">Ator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Pessoa"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Actor"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Actor</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Actor"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Diretor">
+    <rdfs:label xml:lang="pt">Diretor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Pessoa"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_director"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_director</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_director"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Produtor">
+    <rdfs:label xml:lang="pt">Produtor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Pessoa"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_producer"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_producer</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_producer"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Roteirista">
+    <rdfs:label xml:lang="pt">Roteirista</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Pessoa"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Screenwriter"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Screenwriter</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Screenwriter"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Editor">
+    <rdfs:label xml:lang="pt">Editor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Pessoa"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_editor"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_editor</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_editor"/>
+  </owl:Class>
+
+  <!-- ========================================================================= -->
+  <!-- CLASSE  Estúdios e Subclasses -->
+  <!-- ========================================================================= -->
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Estudio">
+    <rdfs:label xml:lang="pt">Estúdio</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_studio"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_studio</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_studio"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#EstudioDeProducao">
+    <rdfs:label xml:lang="pt">EstudioDeProducao</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Estudio"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_studio"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_studio</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_studio"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Distribuidora">
+    <rdfs:label xml:lang="pt">Distribuidora</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_distributor"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_distributor</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_distributor"/>
+  </owl:Class>
+
+  <!-- ========================================================================= -->
+  <!-- CLASSE  Gêneros e Subclasses -->
+  <!-- ========================================================================= -->
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Genero">
+    <rdfs:label xml:lang="pt">Gênero</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Film_genre"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Film_genre</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Film_genre"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Acao">
+    <rdfs:label xml:lang="pt">Ação</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Action_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Action_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Action_film"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Comedia">
+    <rdfs:label xml:lang="pt">Comédia</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Comedy_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Comedy_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Comedy_film"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Drama">
+    <rdfs:label xml:lang="pt">Drama</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Drama_(film_and_television)"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Drama_(film_and_television)</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Drama_(film_and_television)"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Suspense">
+    <rdfs:label xml:lang="pt">Suspense</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Thriller_(genre)"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Thriller_(genre)</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Thriller_(genre)"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#FiccaoCientifica">
+    <rdfs:label xml:lang="pt">FicçãoCientífica</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Science_fiction_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Science_fiction_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Science_fiction_film"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Terror">
+    <rdfs:label xml:lang="pt">Terror</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Horror_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Horror_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Horror_film"/>
+  </owl:Class>
+  
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Animacao">
+    <rdfs:label xml:lang="pt">Animação</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Animated_film"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Animated_film</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Animated_film"/>
+  </owl:Class>
+
+  <!-- ========================================================================= -->
+  <!-- CLASSE  Prêmios e Subclasses -->
+  <!-- ========================================================================= -->
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Premio">
+    <rdfs:label xml:lang="pt">Prêmio</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Award"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Award</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Award"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#Oscar">
+    <rdfs:label xml:lang="pt">Oscar</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Premio"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Academy_Awards"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Academy_Awards</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Academy_Awards"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#GloboDeOuro">
+    <rdfs:label xml:lang="pt">GloboDeOuro</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Premio"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Golden_Globe_Awards"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Golden_Globe_Awards</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Golden_Globe_Awards"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://example.org/ontologia_filmes#PalmaDeOuro">
+    <rdfs:label xml:lang="pt">PalmaDeOuro</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/ontologia_filmes#Premio"/>
+    <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Palme_d%27Or"/>
+    <ex:changesByEntity rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dbpedia.org/resource/Palme_d%27Or</ex:changesByEntity>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Palme_d%27Or"/>
+  </owl:Class>
+
+  <!-- ========================================================================= -->
+  <!-- PROPRIEDADES DE OBJETO (Relações) -->
+  <!-- ========================================================================= -->
+
+  <owl:ObjectProperty rdf:about="http://example.org/ontologia_filmes#temDiretor">
+    <rdfs:label xml:lang="pt">temDiretor</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:range rdf:resource="http://example.org/ontologia_filmes#Diretor"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://example.org/ontologia_filmes#temGenero">
+    <rdfs:label xml:lang="pt">temGenero</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:range rdf:resource="http://example.org/ontologia_filmes#Genero"/>
+  </owl:ObjectProperty>
+
+  <!-- ========================================================================= -->
+  <!-- PROPRIEDADES DE DADOS (Atributos) -->
+  <!-- ========================================================================= -->
+
+  <owl:DatatypeProperty rdf:about="http://example.org/ontologia_filmes#anoLancamento">
+    <rdfs:label xml:lang="pt">anoLancamento</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/ontologia_filmes#Filme"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <!-- ========================================================================= -->
+  <!-- INSTÂNCIAS (INDIVÍDUOS) -->
+  <!-- ========================================================================= -->
+
+  <!-- Diretores -->
+  <owl:NamedIndividual rdf:about="http://example.org/ontologia_filmes#RogerAllers">
+    <rdfs:label xml:lang="pt">Roger Allers</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/ontologia_filmes#Diretor"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://example.org/ontologia_filmes#RobMinkoff">
+    <rdfs:label xml:lang="pt">Rob Minkoff</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/ontologia_filmes#Diretor"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://example.org/ontologia_filmes#JonFavreau">
+    <rdfs:label xml:lang="pt">Jon Favreau</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/ontologia_filmes#Diretor"/>
+  </owl:NamedIndividual>
+
+  <!-- O Rei Leão (1994) -->
+  <owl:NamedIndividual rdf:about="http://example.org/ontologia_filmes#ReiLeao_1994">
+    <rdfs:label xml:lang="pt">O Rei Leão (1994)</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/ontologia_filmes#FilmeLongaMetragem"/>
+    <ex:anoLancamento rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</ex:anoLancamento>
+    <ex:temDiretor rdf:resource="http://example.org/ontologia_filmes#RogerAllers"/>
+    <ex:temDiretor rdf:resource="http://example.org/ontologia_filmes#RobMinkoff"/>
+    <ex:temGenero rdf:resource="http://example.org/ontologia_filmes#Drama"/>
+    <ex:temGenero rdf:resource="http://example.org/ontologia_filmes#Comedia"/>
+    <ex:temGenero rdf:resource="http://example.org/ontologia_filmes#Animacao"/>
+  </owl:NamedIndividual>
+
+  <!-- O Rei Leão (2019) -->
+  <owl:NamedIndividual rdf:about="http://example.org/ontologia_filmes#ReiLeao_2019">
+    <rdfs:label xml:lang="pt">O Rei Leão (2019)</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/ontologia_filmes#FilmeLongaMetragem"/>
+    <ex:anoLancamento rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</ex:anoLancamento>
+    <ex:temDiretor rdf:resource="http://example.org/ontologia_filmes#JonFavreau"/>
+    <ex:temGenero rdf:resource="http://example.org/ontologia_filmes#Drama"/>
+    <ex:temGenero rdf:resource="http://example.org/ontologia_filmes#Animacao"/>
+  </owl:NamedIndividual>
+
+</rdf:RDF>
