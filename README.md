@@ -98,38 +98,5 @@ Isso permite a interconexão de dados entre a ontologia e o DBpedia, facilitando
 
 ---
 
-##  Instâncias Conectadas e Exemplos de Instâncias
 
-A ontologia contém exemplos de instâncias conectadas, com filmes, pessoas, gêneros, e estúdios. Aqui estão alguns exemplos de instâncias:
 
-### **Instância de Filme: Matrix**
-```xml
-<owl:NamedIndividual rdf:about="#Matrix">
-  <rdf:type rdf:resource="#Filme"/>
-  <temTituloOriginal>The Matrix</temTituloOriginal>
-  <temDuracao rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">136</temDuracao>
-  <temAnoDeLancamento rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1999</temAnoDeLancamento>
-  <pertenceAoGenero rdf:resource="#FiccaoCientifica"/>
-</owl:NamedIndividual>
-Instância de Pessoa: Keanu Reeves
-xml
-Copiar código
-<owl:NamedIndividual rdf:about="#KeanuReeves">
-  <rdf:type rdf:resource="#Ator"/>
-  <temNomeCompleto>Keanu Reeves</temNomeCompleto>
-</owl:NamedIndividual>
-Instância de Estúdio: Warner Bros
-xml
-Copiar código
-<owl:NamedIndividual rdf:about="#WarnerBros">
-  <rdf:type rdf:resource="#EstudioDeProducao"/>
-  <temNomeDoEstudio>Warner Bros</temNomeDoEstudio>
-</owl:NamedIndividual>
-Instância de Gênero: Ficção Científica
-xml
-Copiar código
-<owl:NamedIndividual rdf:about="#FiccaoCientifica">
-  <rdf:type rdf:resource="#Genero"/>
-  <rdfs:label>Ficção Científica</rdfs:label>
-</owl:NamedIndividual>
-Essas instâncias são exemplos do uso da ontologia para representar filmes, atores, estúdios e gêneros de forma padronizada.
