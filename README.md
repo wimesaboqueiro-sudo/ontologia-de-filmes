@@ -74,7 +74,6 @@ Cada classe principal possui subclasses para detalhar mais aspectos específicos
 
 A ontologia utiliza o DBpedia como fonte de dados externos para enriquecer e contextualizar as informações presentes nas classes e subclasses. As classes e indivíduos são relacionados ao DBpedia usando as propriedades `owl:equivalentClass` e `rdfs:seeAlso`.
 
-## 🔗 Integração com DBpedia
 
 A ontologia contém links para entidades reais, por exemplo:
 
